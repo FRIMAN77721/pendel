@@ -40,7 +40,7 @@ namespace pendel
             }
             //Console.ReadLine();
             Console.WriteLine("отработано в папках");
-            Console.WriteLine("ВЫборка попен и гсп по Москве");
+            Console.WriteLine("Выборка попен и гсп по Москве");
             //Console.ReadLine();
             Servers_nvp.Serv_val(179);
             new PTK_NVP.TASK.PENDEL().DoWork();
@@ -74,6 +74,14 @@ namespace pendel
             DB.Open();
             DB.CleanUP();
             DB.Close();
+            string DirCreateDate = DateTime.Now.ToString("yyyy" + "MM" + "dd");
+            string PATH = Path.Combine(@"u:\OBMEN\ОН\Удаленные дела\", DirCreateDate);
+            Directory.CreateDirectory(PATH);
+            FileInfo[] fileCopy = new DirectoryInfo(Environment.CurrentDirectory).GetFiles("удаленные " + DateTime.Now.ToString("dd-MM-yyyy*") + ".xlsx");
+            foreach (FileInfo item in fileCopy)
+            {
+                File.Copy(item.FullName, PATH +"\\"+ item.Name);
+            }
             Console.WriteLine("Готово");
             //DownLoadsTable.ImportTablePO(file_path2);
             Console.ReadLine();

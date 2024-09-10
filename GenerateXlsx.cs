@@ -99,7 +99,7 @@ namespace pendel
                     row2++;
                 }
                 sheet2.Cells[sheet2.Dimension.Address].AutoFitColumns();
-                package.SaveAs(Environment.CurrentDirectory + @"\удаленные " + DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss") + ".xlsx");
+                package.SaveAs(Environment.CurrentDirectory + @"\удаленные " + DateTime.Now.ToString("dd-MM-yyyy HH-mm-ss") + ".xlsx");
 
             }
         }
