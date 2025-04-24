@@ -82,6 +82,12 @@ namespace pendel
             {
                 File.Copy(item.FullName, PATH +"\\"+ item.Name);
             }
+            string PATH2 = Path.Combine(@"w:\    КОНТРОЛЬНЫЕ МЕРОПРИЯТИЯ\Списки дубликатов между М и МО\");
+            FileInfo[] fileCopy2 = new DirectoryInfo(Environment.CurrentDirectory).GetFiles("ДУБЛИ "+DateTime.Now.ToString("dd.MM.yyyy*")+".xlsx");
+            foreach (FileInfo item in fileCopy2)
+            {
+                File.Copy(item.FullName, PATH2 + "\\" + item.Name);
+            }
             Console.WriteLine("Готово");
             //DownLoadsTable.ImportTablePO(file_path2);
             Console.ReadLine();
